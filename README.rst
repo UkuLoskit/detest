@@ -4,11 +4,10 @@ Xunit parser
 .. image:: https://travis-ci.org/UkuLoskit/xunit.svg?branch=master
     :target: https://travis-ci.org/UkuLoskit/xunit
 
-Xunit parser Provides common interface for different formats of Xunit XML.
+Xunit Parser provides a common Python interface for different formats of Xunit XML.
 
 Usage
 -----
-
 
 Regardless of whether there are multiple test suites, the library always wraps the results in a TestSuites object
 
@@ -18,9 +17,9 @@ Regardless of whether there are multiple test suites, the library always wraps t
                 print(test_case)
 
 
-Xunit parser can also be used in situations where XML must be safely processed from untrusted sources.
+Xunit Parser can also be used in situations where XML from unstrusted sources must be safely processed.
 
-For example, you can use Xunit Parser in conjunction with the excellent `defusedxml`: 
+For example, you can use Xunit Parser in conjunction with the excellent `defusedxml` library: 
 
     >>> import defusedxml
     >>> test_suites = XunitParser(elementree_class=defusedxml.ElementTree).parse('my.xml')
