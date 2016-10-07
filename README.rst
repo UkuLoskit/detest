@@ -1,6 +1,8 @@
 Xunit parser
 ============
-[![Build Status](https://travis-ci.org/UkuLoskit/xunit.svg?branch=master)](https://travis-ci.org/UkuLoskit/xunit)
+
+.. image:: https://travis-ci.org/UkuLoskit/xunit.svg?branch=master
+    :target: https://travis-ci.org/UkuLoskit/xunit
 
 Xunit parser Provides common interface for different formats of Xunit XML.
 
