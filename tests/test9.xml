@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<testsuite errors='0' failures='0' name='test.suite.bad.time2' tests='1' time='13,323.232' >
+  <testcase name="reallySlowTest" time="29,34"/>
+</testsuite>
