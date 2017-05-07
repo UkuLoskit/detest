@@ -11,7 +11,7 @@ Usage
 
 Regardless of whether there are multiple test suites, the library always wraps the results in a TestSuites object
 
-    >>> test_suites = XunitParser().parse('my.xml')
+    >>> test_suites = Detest().parse('my.xml')
     >>> for test_suite in test_suites.test_suites:
             for test_case in test_suite.test_cases:
                 print(test_case)
