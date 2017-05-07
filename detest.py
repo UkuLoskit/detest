@@ -3,7 +3,7 @@ import math
 import xml.etree.ElementTree as ET
 
 
-class XunitParserException(Exception):
+class DetestException(Exception):
     pass
 
 
@@ -131,7 +131,7 @@ class Error(Fault):
     pass
 
 
-class XunitParser(object):
+class Detest(object):
     def __init__(self, elementree_class=ET):
         self.elementree_class = elementree_class
         self.tree, self.root = None, None
@@ -147,4 +147,4 @@ class XunitParser(object):
             test_suites.test_suites = [TestSuite(self.root)]
             return test_suites
         else:
-            raise XunitParserException('Unknown XML root tag %s' % self.root.tag)
+            raise DetestException('Unknown XML root tag %s' % self.root.tag)

@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from .context import xunit
+from .context import detest
 
 import unittest
-import datetime
-
 
 
 class Test1(unittest.TestCase):
 
     def test_testsuite_as_root(self):
-        result = xunit.XunitParser().parse("tests/test1.xml")
+        result = detest.Detest().parse("tests/test1.xml")
         self.assertEqual(len(result.test_suites), 1)
         test_suite = result.test_suites[0]
         self.assertEqual(test_suite.name, "nosetests")
@@ -22,7 +20,7 @@ class Test1(unittest.TestCase):
 
 class Test2(unittest.TestCase):
     def test_no_errors_failure(self):
-        result = xunit.XunitParser().parse("tests/test2.xml")
+        result = detest.Detest().parse("tests/test2.xml")
         self.assertEqual(len(result.test_suites), 1)
         test_suite = result.test_suites[0]
         self.assertEqual(test_suite.name, "")
@@ -34,7 +32,7 @@ class Test2(unittest.TestCase):
 
 class Test3(unittest.TestCase):
     def test_failure_tag(self):
-        result = xunit.XunitParser().parse("tests/test3.xml")
+        result = detest.Detest().parse("tests/test3.xml")
         self.assertEqual(len(result.test_suites), 1)
         test_suite = result.test_suites[0]
         self.assertEqual(test_suite.name, "bla")
@@ -57,7 +55,7 @@ class Test3(unittest.TestCase):
 
 class Test4(unittest.TestCase):
     def test_testsuites_as_root(self):
-        result = xunit.XunitParser().parse("tests/test4.xml")
+        result = detest.Detest().parse("tests/test4.xml")
         self.assertEqual(len(result.test_suites), 1)
         self.assertEqual(result.time.seconds, 45)
         test_suite = result.test_suites[0]
@@ -69,7 +67,7 @@ class Test4(unittest.TestCase):
 
 class Test5(unittest.TestCase):
     def test_timestamp(self):
-        result = xunit.XunitParser().parse("tests/test5.xml")
+        result = detest.Detest().parse("tests/test5.xml")
         self.assertEqual(len(result.test_suites), 1)
         test_suite = result.test_suites[0]
         self.assertEqual(test_suite.name, "Toplevel Test Suite")
@@ -79,7 +77,7 @@ class Test5(unittest.TestCase):
 
 class Test6(unittest.TestCase):
     def test_empty_test_cases(self):
-        result = xunit.XunitParser().parse("tests/test6.xml")
+        result = detest.Detest().parse("tests/test6.xml")
         self.assertEqual(len(result.test_suites), 1)
         test_suite = result.test_suites[0]
         self.assertEqual(test_suite.name, "com.github.review.CommentSourceTest")
@@ -91,7 +89,7 @@ class Test6(unittest.TestCase):
 
 class Test7(unittest.TestCase):
     def test_phantom(self):
-        result = xunit.XunitParser().parse("tests/test7.xml")
+        result = detest.Detest().parse("tests/test7.xml")
         self.assertEqual(len(result.test_suites), 1)
         test_suite = result.test_suites[0]
         self.assertEqual(test_suite.name, "PhantomJS 1.9.7 (Linux)")
@@ -102,7 +100,7 @@ class Test7(unittest.TestCase):
 
 class Test8(unittest.TestCase):
     def test_bad_time(self):
-        result = xunit.XunitParser().parse("tests/test8.xml")
+        result = detest.Detest().parse("tests/test8.xml")
         self.assertEqual(len(result.test_suites), 1)
         test_suite = result.test_suites[0]
         self.assertEqual(test_suite.name, "test.suite.bad.time")
@@ -113,7 +111,7 @@ class Test8(unittest.TestCase):
 
 class Test9(unittest.TestCase):
     def test_weird_time(self):
-        result = xunit.XunitParser().parse("tests/test9.xml")
+        result = detest.Detest().parse("tests/test9.xml")
         self.assertEqual(len(result.test_suites), 1)
         test_suite = result.test_suites[0]
         self.assertEqual(test_suite.name, "test.suite.bad.time2")

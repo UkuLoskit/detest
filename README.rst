@@ -1,10 +1,10 @@
-Xunit parser
+Detest parser
 ============
 
-.. image:: https://travis-ci.org/UkuLoskit/xunit.svg?branch=master
-    :target: https://travis-ci.org/UkuLoskit/xunit
+.. image:: https://travis-ci.org/UkuLoskit/detest.svg?branch=master
+    :target: https://travis-ci.org/UkuLoskit/detest
 
-Xunit Parser provides a common Python interface for different formats of Xunit XML.
+Detest provides a common Python interface for different formats of Xunit XML.
 
 Usage
 -----
@@ -17,9 +17,9 @@ Regardless of whether there are multiple test suites, the library always wraps t
                 print(test_case)
 
 
-Xunit Parser can also be used in situations where XML from unstrusted sources must be safely processed.
+Detest can also be used in situations where XML from unstrusted sources must be safely processed.
 
-For example, you can use Xunit Parser in conjunction with the excellent `defusedxml` library: 
+For example, you can use Detest in conjunction with the excellent `defusedxml` library: 
 
     >>> import defusedxml
-    >>> test_suites = XunitParser(elementree_class=defusedxml.ElementTree).parse('my.xml')
+    >>> test_suites = Detest(elementree_class=defusedxml.ElementTree).parse('my.xml')

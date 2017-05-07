@@ -10,13 +10,13 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='xunit',
+    name='detest',
     version='0.0.1',
-    description='Xunit test parser',
+    description='Detest unit test parser',
     long_description=readme,
     author='Uku Loskit',
     author_email='ukuloskit@gmail.com',
-    url='https://github.com/UkuLoskit/xunit',
+    url='https://github.com/UkuLoskit/detest',
     license=license,
     packages=find_packages(exclude=('tests'))
 )
